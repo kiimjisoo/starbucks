@@ -1,12 +1,43 @@
+<!-- 
+  lang 지정 사용자 정의 속성 추가
+  => 명령 팔레트에서 settings.json검색
+
+  "emmet.variables": {
+        "lang": "ko"
+    },
+-->
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Starbucks Coffee Korea</title>
+
+  <!-- 파비콘은 프로젝트 폴더의 최상위(root)경로에 포함시키면 자동 적용
+    최상위 경로에 없거나, ico가 아닌 별도 파일을 가진 경우에는 <link>로 적용
+  -->
+  <!-- favicon.ico 만들기: https://iconifier.net -->
+  <link rel="stylesheet" href="./favicon.ico">
+  <!-- 스타일 초기화:브라우저 별로 다른 기본 스타일이 적용되는 것을 초기화 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
+  <!-- 구글 웹폰트:오픈 라이선스 폰트, 한글 지원하는지 확인 및 필요한 굵기만 선택 후 link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- 구글 머테리얼 아이콘 : 구글에서 제공하는 머테리얼 스타일의 아이콘 글자처럼 취급 가능한 장점 -->
+  <!-- 그 외 fontawsome bootstrap icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+
+  <link rel="stylesheet" href="./CSS/main.css">
 </head>
 <body>
-  
+  Hello world!!
+  <span class="material-icons">
+    face
+    </span>
 </body>
 </html>
