@@ -54,6 +54,18 @@
 
   <link rel="stylesheet" href="./css/main.css">
 
+  <!-- GSAP -->
+  <!-- 순서 주의(main.js에서 사용하니 더 앞에) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" 
+  integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- SWIPER(8버전으로 진행) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  
+
+  
+
   <script defer src="./js/main.js"></script>
 </head>
 <body>
@@ -408,5 +420,70 @@
     </div>
 
   </header>
+
+  <!-- VISUAL -->
+  <section class="visual">
+    <div class="inner">
+      <div class="tittle fade-in">
+        <img src="./images/visual_title.png" alt="STARBUCKS DELIGHTFUL START TO THE YEARS">
+        <a href="javascript:void(0)" class="btn btn--brown">자세히 보기</a>
+      </div>
+      <div class="fade-in">
+        <img src="./images/visual_cup1.png" alt="new OATMEAL LATTE" class="cup1 image">
+        <img src="./images/visual_cup1_text.png" alt="오트밀 라떼" class="cup1 text">
+      </div>
+      <div class="fade-in">
+        <img src="./images/visual_cup2.png" alt="new STARBUCKS CARAMEL CRUMBLE MOCHA" class="cup2 image">
+        <img src="./images/visual_cup2_text.png" alt="스타벅스 카라멜 크럼블 모카" class="cup2 text">
+      </div>
+      <div class="fade-in">
+        <img src="./images/visual_spoon.png" alt="spoon" class="spoon">
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICE -->
+  <!-- 전체에 배경색 주기 위해 -->
+  <section class="notice">
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
+    <div class="inner">
+      <div class="inner__left">
+        <h2>공지사항</h2>
+        <!-- swiper:공지사항이 슬라이드 될 영역, 슬라이드 라이브러리 사용! -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">크리스마스 & 연말연시 스타벅스 매장 영업시간 변경 안내</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">[당첨자 발표] 스타벅스 플래너 영수증 이벤트</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">스타벅스 애플리케이션 버전 업데이트 안내</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="javascript:void(0)">[당첨자 발표] 뉴이어 전자영수증 이벤트</a>
+            </div>
+          </div>
+
+        </div>
+        <a href="javascript:void(0)" class="notice-more">
+          <span class="material-icons">add_circle</span>
+        </a>
+
+      </div>
+      <div class="inner__right">
+        <h2>스타벅스 프로모션</h2>
+        <div class="toggle-promotion">
+          <span class="material-icons">upload</span>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
 </body>
 </html>

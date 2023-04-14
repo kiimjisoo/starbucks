@@ -6,7 +6,6 @@ body {
   line-height: 1.4;
   color: #333;
   /* 위 속성들은 모두 상속되기에 전체 스타일을 한번에 제어 */
-  height: 3000px;
 }
 
 a {
@@ -26,6 +25,62 @@ img {
   margin: 0 auto;
   position : relative;
 }
+
+/* 전역 버튼 스타일 */
+/* 버튼과 같이 여러곳에서 반복 사용되는 요소를 공통 스타일로 작업하면, 매번 다시 작성 할 필요가 업음 */
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 700;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  display: block; /*a,span 같은 인라인 요소를 버튼으로 사용할 수도 있으니 미리 블록으로 지정*/
+  transition: .4s;
+}
+ /* (참고) 커서 모양 커스텀 가능 */
+  /* cursor: url("https://blog.kakaocdn.net/dn/BQXpN/btq3qNR67Lg/8tx8tGzkOcr5BuX5dyIaKk/img.png") 0 0, auto; */
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--brown {
+  color: #592b18;
+  border-color: #592b18;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #592b18;
+}
+.btn.btn--reverse {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--gold {
+  color: #d9aa8a;
+  border-color: #d9aa8a;
+}
+.btn.btn--gold:hover {
+  color: #fff;
+  background-color: #d9aa8a;
+}
+.btn.btn--white {
+  color: #fff;
+  border-color: #fff;
+}
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #fff;
+}
+
 
 /* HEADER */
 header {
@@ -216,15 +271,156 @@ header .badges .badge {
   cursor: pointer;
 }
 
+/* VISUAL */
+.visual {
+  /* 헤더가 fixed 되어 일반 배치 흐름에서 벗어남(주변 요소들과 상호작용하지 않음) */
+  /* 헤더의 높이만큼 외부 여백 추가 */
+  margin-top: 120px;
+  background-image: url(/images/visual_bg.jpg);
+  background-position: center;
+}
+.visual .inner {
+  height: 646px;
+  /* background-color: orange; */
+}
+.visual .tittle {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+.visual .tittle .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
+}
+.visual .fade-in {
+  /* 순차적으로 요소 보이기 - 투명한 상태에서 시작되도록 */
+  opacity: 0;
+}
+
+/* NOTICE */
+.notice {
+  position: relative;
+}
+.notice .bg-left {
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.notice .bg-right {
+  width: 50%;
+  height: 100%;
+  background-color: #f6f5ef;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.notice .inner {
+  height: 62px;
+  /* border: 2px solid red; */
+  display: flex;
+}
+.notice .inner__left {
+  /* 방법1. %를 사용하여 비율 나누기 */
+  width: 70%;
+  /* 방법2. flex 를 사용하여 비율 나누기  */
+  /* flex: 7; */
+  background-color: #333;
+
+  display: flex;
+  align-items: center;
+}
+.notice .inner__left h2 {
+  color: #fff;
+  height: 17px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+.notice .inner__left .swiper {
+  /* background-color: orange; */
+  height: 62px;
+  flex-grow: 1; /* 여기서는 flex: 1; 써도 같은 결과*/
+}
+
+/* swiper 높이 없으면 동작 안 함 */
+
+.notice .inner__left .swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  height: 62px;
+}
+.notice .inner__left .swiper .swiper-slide a {
+  color: #fff;
+}
+
+.notice .inner__left .notice-more {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notice .inner__left .notice-more .material-icons {
+  /* 머테리얼 아이콘은 글자 관련 속성이 적용됨 */
+  color: #fff;
+  font-size: 30px;
+}
 
 
+.notice .inner__right {
+  /* 방법1. %를 사용하여 비율 나누기 */
+  width: 30%;
+  /* 방법2. flex 를 사용하여 비율 나누기 */
+  /* flex: 3; */
 
-
-
-
-
-
-
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.notice .inner__right h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+.notice .inner__right .toggle-promotion {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.notice .inner__right .toggle-promotion .material-icons {
+  font-size: 30px;
+}
 
 
 
