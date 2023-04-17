@@ -73,3 +73,46 @@ new Swiper('.notice .swiper', {
   autoplay: true, // 자동 재생 여부
 
 });
+
+
+// 프로모션 수평 슬라이드 기능
+new Swiper('.promotion .swiper', {
+  direction: 'horizontal', //수평 슬라이드(기본값)
+  loop:  true, //반복 재생 여부
+  autoplay: {
+    delay: 5000 // 5초마다 슬라이드 바뀜(기본값 : 3000)
+  }, // 자동 재생 여부
+  slidesPerView: 3, //한 번에 보여줄 슬라이드 개수(기본값:1)
+  spaceBetween: 10, //슬라이드 사이 여백(간격) px
+  centeredSlides: true, //1번 슬라이드가 가운데 보임
+  pagination: { //페이지 번호 사용
+    el: '.promotion .swiper-pagination', //페이지 번호 요소 선택자
+    clickable: true //사용자의 페이지 번호 요소 제어 가능 여부
+  },
+  navigation: { //슬라이드 이전/다음 버튼 사용
+    nextEl: '.promotion .swiper-button-next',
+    prevEl: '.promotion .swiper-button-prev',
+  },
+});
+
+// 프로모션 섹션 토글 기능
+const promotionEl = document.querySelector('section.promotion');
+const promotionTogglebtn = document.querySelector('.toggle-promotion');
+const promotionTogglebtnIcon = promotionTogglebtn.querySelector('.material-icons');
+
+// 토글 버튼 클릭했을 때 실행
+// 프로모션 요소에 'hide'라는 클래스 값이 있으면 보임 처리!
+// ('hide'클래스를 제거하고 아이콘 모양을 'upload'로 설정)
+// 그렇지 않으면 숨김처리!
+// ('hide'클래스를 추가하고 아이콘 모양을 'download'로 설정)
+
+promotionTogglebtn.addEventListener('click', function () {
+  if (promotionEl.classList.contains('hide')) {
+    promotionEl.classList.remove('hide');
+    promotionTogglebtnIcon.textContent = 'upload';
+  } else { 
+    promotionEl.classList.add('hide');
+    promotionTogglebtnIcon.textContent = 'download';
+  }
+});
+

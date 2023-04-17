@@ -11,8 +11,10 @@ img {
 
 header {
   background-color: aliceblue;
+  border-bottom: 1px solid #c8c8c8;
   width: 100%;
   top: 0;
+  position: fixed;
 }
 header .inner {
   height: 120px;
