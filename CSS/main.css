@@ -603,7 +603,233 @@ header .badges .badge {
   height: 100%;
 }
 
+.youtube .youtube__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .3);
+  background-image: url(../images/video_cover_pattern.png);
+}
+.youtube .inner {
+  height: 100%;
+  /* background-color: royalblue; */
+}
+.youtube .floating1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+.youtube .floating2 {
+  position: absolute;
+  top: 350px;
+  left: 150px;
+}
+
+/* SEASON PRODUCT */
+.season-product {
+  background-image: url(../images/season_product_bg.jpg);
+}
+.season-product .inner {
+  height: 400px;
+}
+.season-product .floating3 {
+  position: absolute;
+  top: -200px;
+  right: 0;
+}
+.season-product .text-group {
+  position: absolute;
+  top: 110px;
+  right: 100px;
+}
+.season-product .text-group .tittle {
+  margin-bottom: 10px;
+}
+.season-product .text-group .description {
+  margin-bottom: 15px;
+}
+
+/* RESERVE COFFEE */
+.reserve-coffee {
+  background-image: url(../images/reserve_bg.jpg)
+}
+.reserve-coffee .inner {
+  height: 400px;
+}
+.reserve-coffee .reserve-logo {
+  position: absolute;
+  top: 110px;
+  left: 0px;
+}
+.reserve-coffee .text-group {
+  position: absolute;
+  top: 124px;
+  left: 208px;
+}
+.reserve-coffee .product {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+/* PICK YOUR FAVORITE */
+.pick-your-favorite {
+  background-image: url(../images/favorite_bg.jpg);
+
+  /* 배경이미지에 시차 효과(Parallax) 주기 */
+  background-attachment: fixed; /* 배경 이미지가  뷰포트에 고정 */
+  background-repeat: no-repeat; 
+  background-position: center;
+  /* 이미지 원본을 유지한 채 더 넓은 너비에 맞춤 */
+  background-size: cover;
+}
+.pick-your-favorite .inner {
+  padding: 110px 0;
+}
+.pick-your-favorite .text-group {
+  /* border: 10px solid red; */
+  width: 362px; /* 정렬 영역이 충분하면 줄바꿈 되지 않음, 너비를 제한해서 강제로 줄바꿈 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-left: 100px;
+}
+.pick-your-favorite .text-group .tittle {
+  margin-bottom: 40px;
+}
+.pick-your-favorite .text-group .description {
+  margin-bottom: 40px;
+}
+
+
+/* RESERVE STORE */
+.reserve-store {
+  background-image: url(../images/reserve_store_bg.jpg);
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* 이미지 원본을 유지한 채 더 넓은 너비에 맞춤 */
+  background-size: cover;
+}
+.reserve-store .inner {
+  height: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reserve-store .medal {
+  width: 334px;
+  height: 334px;
+  perspective: 600px; /* 회전하는 요소의 부모 요소의 원근 거리를 추가 */
+}
+.reserve-store .medal .front,
+.reserve-store .medal .back {
+  position: absolute;
+  backface-visibility: hidden; /* 회전된 요소의 뒷면을 숨김 */
+  transition: 1s;
+}
+.reserve-store .medal .front {
+  transform: rotateY(0deg); /* 명시적으로 작성 (생략가능) */
+}
+.reserve-store .medal:hover .front {
+  transform: rotateY(180deg); 
+}
+.reserve-store .medal .back {
+  transform: rotateY(-180deg); /* 명시적으로 작성 (생략가능) */
+}
+.reserve-store .medal:hover .back {
+  transform: rotateY(0deg); 
+}
+.reserve-store .medal .back .btn {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
 
 
 
 
+
+/* FIND STORE */
+.find-store {
+  background-image: url(../images/find_store_bg.jpg);
+}
+.find-store .inner {
+  height: 480px;
+}
+.find-store .texture1 {
+  position: absolute;
+  top: 0;
+  left: 400px;
+}
+.find-store .texture2 {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+}
+.find-store .picture1 {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, .5);
+}
+.find-store .picture2 {
+  position: absolute;
+  top: 150px;
+  left: 250px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, .5);
+}
+.find-store .text-group {
+  position: absolute;
+  top: 120px;
+  left: 550px;
+}
+.find-store .text-group .tittle {
+  margin-bottom: 20px;
+}
+.find-store .text-group .description {
+  margin-bottom: 20px;
+}
+
+
+/* AWARDS */
+.awards {
+  background-color: #272727;
+}
+.awards .inner {
+  padding: 40px 0;
+}
+.awards .swiper-button-prev,
+.awards .swiper-button-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  opacity: .3;
+  position: absolute;
+}
+.awards .swiper-button-prev {
+  left: -100px;
+}
+.awards .swiper-button-next {
+  right: -100px;
+}
+.awards .swiper-button-prev:hover,
+.awards .swiper-button-next:hover {
+  background-color: #fff;
+  color: #333;
+}
+.awards .swiper-button-prev::after,
+.awards .swiper-button-next::after {
+  display: none;
+}

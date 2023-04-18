@@ -58,6 +58,7 @@ fadeEls.forEach(function (fadeEls, index) {
   // gsap.to(요소, 지속시간, 옵션:{}) 메소드:css속성을 통해 애니메이션 처리
   // foreach는 0부터라서 +1
   // delay : 몇 초 뒤에 실행될 것인가?
+  // index+1을 안 하면 0번째 이미지 딜레이 안 먹고 먼저 나오는걸 방지하기 위해
   gsap.to(fadeEls, 1, {
     delay: (index + 1 )* 0.7,
     opacity: 1
@@ -65,7 +66,7 @@ fadeEls.forEach(function (fadeEls, index) {
 })
 
 // 공지사항 수직 슬라이드 기능 작성 대소문자 주의
-// new 키워드로 Swiper 객체를 생성 => 슬라읻 기능 생성
+// new 키워드로 Swiper 객체를 생성 => 슬라이드 기능 생성
 // new Swiper(선택자, 옵션: {});
 new Swiper('.notice .swiper', {
   direction: 'vertical', //수직 슬라이드
@@ -115,4 +116,51 @@ promotionTogglebtn.addEventListener('click', function () {
     promotionTogglebtnIcon.textContent = 'download';
   }
 });
+
+
+// 유튜브 섹션 위에 부유 요소 애니메이션 처리
+// gsap.to(요소, 지속시간, 옵션: {})
+// 옵션 참고: https://greensock.com/docs/v3/GSAP/gsap.to()
+gsap.to('.floating1', 1.5, {
+  delay: 1, // 얼마나 늦게 애니메이션을 시작할 것인지 지연시간 설정
+  y: 15, // transform: translateY(); 와 같음, 수직으로 얼마나 움직일지 설정
+  repeat: -1, // 몇번 반복하는지를 설정, -1은 무한 반복
+  yoyo: true, // 한 번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut // Easing 함수 적용, 느리게-빠르게-느리게
+});
+gsap.to('.floating2', 1.5, {
+  delay: 0.5, // 얼마나 늦게 애니메이션을 시작할 것인지 지연시간 설정
+  x: 30, // transform: translateY(); 와 같음, 수직으로 얼마나 움직일지 설정
+  repeat: -1, // 몇번 반복하는지를 설정, -1은 무한 반복
+  yoyo: true, // 한 번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut // Easing 함수 적용, 느리게-빠르게-느리게
+});
+gsap.to('.floating3', 1.5, {
+  delay: 1, // 얼마나 늦게 애니메이션을 시작할 것인지 지연시간 설정
+  y: 50, // transform: translateY(); 와 같음, 수직으로 얼마나 움직일지 설정
+  repeat: -1, // 몇번 반복하는지를 설정, -1은 무한 반복
+  yoyo: true, // 한 번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut // Easing 함수 적용, 느리게-빠르게-느리게
+});
+
+
+// 어워즈 섹션 슬라이드 기능
+new Swiper('.awards .swiper', {
+  // direction: 'horizontal', //수평 슬라이드(기본값)
+  loop:  true, //반복 재생 여부
+  autoplay: true, // 자동 재생 여부
+  slidesPerView: 5, //한 번에 보여줄 슬라이드 개수(기본값:1)
+  spaceBetween: 30, //슬라이드 사이 여백(간격) px
+  navigation: { //슬라이드 이전/다음 버튼 사용
+    nextEl: '.awards .swiper-button-next',
+    prevEl: '.awards .swiper-button-prev',
+  },
+});
+
+
+
+
+
+
+
 

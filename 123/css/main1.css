@@ -1,28 +1,33 @@
+
+
 a {
   text-decoration: none;
 }
 img {
   display: block;
 }
-.inner {
-  width: 1100px;
+.inner_util {
+  position: relative;
+}
+
+.util_menu {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(238, 238, 238);
+}
+.util_menu .inner_util {
+  width: 1260px;
   margin: 0 auto;
 }
 
-header {
-  background-color: aliceblue;
-  border-bottom: 1px solid #c8c8c8;
-  width: 100%;
-  top: 0;
-  position: fixed;
+.util_menu .inner_util ul li:first-child a {
+  padding-right: 20px;
+  border-right: 1px solid rgb(228,228,228);
 }
-header .inner {
-  height: 120px;
+.util_menu .inner_util ul li a {
+  display: block;
+  margin-right: 20px;
+  font-size: 14px;
+  color: rgb(51,51,51);
+  line-height: 40px;
 }
-header .logo {
-  
-}
-
-
-
-
