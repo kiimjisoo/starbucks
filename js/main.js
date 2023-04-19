@@ -20,8 +20,22 @@ searchInputEl.addEventListener('blur',function () {
   searchInputEl.setAttribute('placeholder', ''); // html 속성을 추가하는 메소드
 });
 
+
+
+
+
 // 스크롤시 전역 배치(고정 배너) 숨기기
 const badgeEl = document.querySelector('header .badges');
+
+// 상단으로 이동버튼제어
+const toToEl = document.querySelector('#to-top');
+toToEl.addEventListener('click', function () {
+  gsap.to(window, 0.6, {
+    scrollTo: 0 //페이지의 0px 지점(최상단)으로 이동, ScrollToPlugin을 연결해야 사용 가능한 옵션
+  });
+})
+
+
 
 // window: 브라우저 창 객체 
 window.addEventListener('scroll', function () {
@@ -39,12 +53,24 @@ if (window.scrollY > 500) {
     opacity: 0, 
     display: 'none'
   })
+
+
+  // 상단으로 이동 버튼 보이기
+  gsap.to(toToEl, 0.6, {
+    opacity: 1,
+    x: 0 //x축 0px 지점으로 이동
+  })
 } else {
   // 배지요소 보이기
   // badgeEl.style.display = 'block';
   gsap.to(badgeEl, 0.6, {
     opacity: 1, 
     display: 'block'
+  })
+  // 상단으로 이동 버튼 숨기기
+  gsap.to(toToEl, 0.6, {
+    opacity: 0,
+    x: 100 //x축 0px 지점으로 이동
   })
 }
 });
@@ -158,9 +184,22 @@ new Swiper('.awards .swiper', {
 });
 
 
+// ScrollMagic 사용
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function (spyEls) {
+  new ScrollMagic
+    .Scene({ //감시할 장면(Scene) 추가 및 옵션 지정
+      triggerElement: spyEls, //보여짐 여부를 감시할 요소를 지정
+      triggerHook: 0.8 //화면의 80% 지점에서 보여짐 여부 감시(0-1사이 지정)
+    })
+    .setClassToggle(spyEls, 'show') //요소가 화면에 보이면 show 클래스 추가 
+    .addTo(new ScrollMagic.Controller()); //컨트롤러의 장면을 할당(필수!) - 라이브러리에서 지정한 문법으로 깊게 이해x
+});
 
 
-
-
+// 현재 연도 표시
+// 닐찌 정보를 가진 JS의 Date 객체를 활용
+const thisyear = document.querySelector('.this-year');
+thisyear.textContent = new Date().getFullYear(); // 현재연도의 정보가 숫자 데이터로 반환됨
 
 
