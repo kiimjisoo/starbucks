@@ -15,6 +15,8 @@ body {
   line-height: 1.4;
   color: #333;
   /* 위 속성들은 모두 상속되기에 전체 스타일을 한번에 제어 */
+
+  /* overflow: hidden; */
 }
 
 a {
@@ -961,4 +963,22 @@ footer .logo {
   right: 30px;
   z-index: 9;
 }
+
+/* 반응형 연습 추가 */
+/* @media screen and (max-width: 960px) {
+  .season-product .inner {
+    height: 700px;
+  }
+  .season-product .product {
+    margin: 0 auto;
+  }
+  .season-product .text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+} */
 

@@ -198,7 +198,7 @@ spyEls.forEach(function (spyEls) {
 
 
 // 현재 연도 표시
-// 닐찌 정보를 가진 JS의 Date 객체를 활용
+// 닐짜 정보를 가진 JS의 Date 객체를 활용
 const thisyear = document.querySelector('.this-year');
 thisyear.textContent = new Date().getFullYear(); // 현재연도의 정보가 숫자 데이터로 반환됨
 
