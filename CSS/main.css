@@ -408,7 +408,6 @@ header .badges .badge {
   height: 62px;
   flex-grow: 1; /* 여기서는 flex: 1; 써도 같은 결과*/
 }
-
 /* swiper 높이 없으면 동작 안 함 */
 
 .notice .inner__left .swiper .swiper-slide {
